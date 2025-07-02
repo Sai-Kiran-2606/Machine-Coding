@@ -1,0 +1,60 @@
+Design a report generator
+-- available in multiple formats - pdf, docx, HTML, etc.,
+-- should be able to add new type of reports.
+--- sales, user and inventory
+
+-- no tight coupling (loose coupling)
+
+--- Delivery of report -> email, download, blob storage
+
+Abstract Class:
+- Report -> sales, user, inventory.
+-----> getTitle, getContent, Generate
+
+Report class will take interface type, the extended can dynamically take the format class.
+
+report -> type --- 1:many
+
+Bridge class is used in both report and type.
+
+Interface
+- Type -> pdf, docx, HTML
+-----> GenerateReport method -> which generates final report.
+
+class SalesReport extends Report{
+    public SalesReport(Type type){
+        super(type);
+    }
+}
+
+class PDF implements Type{
+    @Override
+    public void generateReport(){
+        width = 0.5*Type.width;
+        content = report.getContent();
+    }
+}
+
+class TypeFactory(){
+    Type getType(String input){
+        switch(input){
+            case "pdf":
+                return new PDF();
+            case "docx":
+                return new DOCX();
+        }
+    }
+}
+
+Main class
+Type type = TypeFactory.getType("pdf");
+Report report  = new SalesReport(type);
+report.generate();
+
+Association -> both entities can exist independently.
+composition -> both depends on each other.
+aggregation -> other class can exist independently. (weak relation) (B can exist
+
+Prompt engineering
+Google AI studio
+Vector databases
