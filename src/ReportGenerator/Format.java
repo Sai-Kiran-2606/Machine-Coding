@@ -1,6 +1,6 @@
 package ReportGenerator;
 
-public abstract class Type {
+public abstract class Format {
     protected String alignment;
     protected int fontSize;
     protected String fontFamily;

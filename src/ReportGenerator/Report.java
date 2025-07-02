@@ -3,13 +3,13 @@ package ReportGenerator;
 public abstract class Report {
     protected String title;
     protected String content;
-    protected Type type;
+    protected Format format;
     protected Delivery delivery;
 
-    public Report(String title, String content, Type type, Delivery delivery) {
+    public Report(String title, String content, Format format, Delivery delivery) {
         this.title = title;
         this.content = content;
-        this.type = type;
+        this.format = format;
         this.delivery = delivery;
     }
 
@@ -21,8 +21,8 @@ public abstract class Report {
         return content;
     }
 
-    public Type getType() {
-        return type;
+    public Format getType() {
+        return format;
     }
 
     public abstract void generate();

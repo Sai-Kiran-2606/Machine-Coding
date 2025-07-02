@@ -1,13 +1,13 @@
 package ReportGenerator;
 
 public class UserReport extends Report{
-    public UserReport(String title, String content, Type type, Delivery delivery) {
-        super(title, content, type, delivery);
+    public UserReport(String title, String content, Format format, Delivery delivery) {
+        super(title, content, format, delivery);
     }
 
     @Override
     public void generate() {
-        type.generateReport(title, content);
+        format.generateReport(title, content);
     }
 
     public void deliver(){

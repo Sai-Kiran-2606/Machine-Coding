@@ -2,13 +2,13 @@ package ReportGenerator;
 
 public class SalesReport extends Report{
 
-    public SalesReport(Type type, String title, String content, Delivery delivery){
-        super(title, content, type, delivery);
+    public SalesReport(Format format, String title, String content, Delivery delivery){
+        super(title, content, format, delivery);
     }
 
     @Override
     public void generate() {
-        type.generateReport(title, content);
+        format.generateReport(title, content);
     }
 
     public void deliver(){
